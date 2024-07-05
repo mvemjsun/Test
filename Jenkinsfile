@@ -20,7 +20,5 @@ pipeline {
 }
 
 def display(String message) {
-  sh """
-  println "#{message}"
-  """
+  println "${message}"
 }
