@@ -2,7 +2,7 @@
 set -e
 echo "Will send message"
 export token=$GITHUB_TOKEN
-export commit=$COMMIT
+export commit=$GIT_COMMIT
 export build_url=$BUILD_URL
 
 export state=$2
