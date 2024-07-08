@@ -1,5 +1,7 @@
 pipeline {
-    agent { 'build' } 
+    agent { 
+      label 'build' 
+    } 
     stages {
         stage('Install') {
             steps("Install fastlane") {
