@@ -5,8 +5,8 @@ export token=$GITHUB_TOKEN
 export commit=$COMMIT
 export build_url=$BUILD_URL
 
-export state=$1
-export context=$2
+export state=$2
+export context=$1
 export description=$3
 
 (
