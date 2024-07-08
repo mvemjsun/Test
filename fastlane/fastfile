@@ -1,0 +1,25 @@
+default_platform :ios
+
+platform :ios do
+  desc "Github Status API"
+  lane :postGithubStatus do |options|
+    github_token = options[:github_token]
+    state = options[:state]
+    description = options[:description]
+    context = options[:context]
+    target_url = options[:target_url]
+    commit = options[:commit]
+
+    if github_token.to_s.empty? || state.to_s.empty? || description.to_s.empty? || context.to_s.empty? || target_url.to_s.empty? || commit.to_s.empty?
+      puts "Github API parameters not provided, skipping PR status update"
+    else 
+      github_api(
+        server_url: "https://api.github.com",
+        api_bearer: github_token,
+        http_method: "POST",
+        path: "/repos/mvemjsun/Test/statuses/#{commit}",
+        body: { state: state, description: description, context: context, target_url: target_url }
+      )
+    end
+  end
+end
