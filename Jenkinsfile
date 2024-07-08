@@ -27,10 +27,14 @@ pipeline {
             }
         }
     }
+
+    post {
+      always {
+            deleteDir()
+      }
+    }
 }
 
 def display(String message) {
-  sh """
-  println "#{message}"
-  """
+  println "Stage #{message} executed"
 }
