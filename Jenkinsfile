@@ -11,19 +11,19 @@ pipeline {
         stage('Build') { 
             steps {
               display("Build")
-              sh './send_message.sh success build completed'
+              sh './fastlane/send_message.sh success build completed'
             }
         }
         stage('Test') { 
             steps {
               display("Test")
-              sh './send_message.sh success test completed'
+              sh './fastlane/send_message.sh success test completed'
             }
         }
         stage('Deploy') { 
             steps {
               display("Deploy")
-              sh './send_message.sh success deploy completed'
+              sh './fastlane/send_message.sh success deploy completed'
             }
         }
     }
