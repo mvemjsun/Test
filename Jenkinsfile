@@ -36,5 +36,5 @@ pipeline {
 }
 
 def display(String message) {
-  println "Stage #{message} executed"
+  println "Stage ${message} executed"
 }
