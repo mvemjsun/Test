@@ -1,4 +1,5 @@
 #!/bin/zsh -l
+echo "Will install gems"
 set -e
 
 (
