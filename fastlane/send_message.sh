@@ -10,6 +10,11 @@ export context=$1
 export description=$3
 
 (
+  echo $state
+  echo $context
+  echo $description
+  echo $commit
+  echo $build_url
   cd ./fastlane
   bundle exec fastlane postGithubStatus github_token:$token commit:$commit target_url:$build_url state:$state description:$description context:$context
 )
