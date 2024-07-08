@@ -2,7 +2,7 @@ default_platform :ios
 
 platform :ios do
   desc "Github Status API"
-  private_lane :postGithubStatus do |options|
+  lane :postGithubStatus do |options|
     github_token = options[:github_token]
     state = options[:state]
     description = options[:description]
